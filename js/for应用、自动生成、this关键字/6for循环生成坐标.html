@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width: 50px;height: 50px;background: red;position: absolute;left: 0;top: 0;}
+    </style>
+    <script>
+        window.onload=function () {
+            var aDiv=document.getElementsByTagName('div');
+            for(var i=0;i<20;i++){
+                document.body.innerHTML+='<div></div>';
+                if (i<10)
+                {aDiv[i].style.left=i*60+'px';
+                    aDiv[i].style.top=i*60+'px';
+                    }
+                else {
+                    aDiv[i].style.left=i*60+'px';
+                    aDiv[i].style.top=(i-2)*60+'px';
+                }
+//                else if(i<30){
+//                    aDiv[i].style.left=(i-20)*60+'px';
+//                    aDiv[i].style.top=120+'px';
+//                }
+//                else if (i<40){
+//                    aDiv[i].style.left=(i-30)*60+'px';
+//                    aDiv[i].style.top=180+'px';
+//                }
+//                else if (i<50){
+//                    aDiv[i].style.left=(i-40)*60+'px';
+//                    aDiv[i].style.top=240+'px';
+//                }else {
+//                    aDiv[i].style.left=(i-50)*60+'px';
+//                    aDiv[i].style.top=300+'px';
+//                }
+
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

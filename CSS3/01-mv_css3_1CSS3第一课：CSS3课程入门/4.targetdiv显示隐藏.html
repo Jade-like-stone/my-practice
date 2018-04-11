@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{text-align:center;vertical-align:middle;width: 100px;height: 100px;background: black;color: white;font-size: 30px;display: none;}
+        div:target{display: block;}
+    </style>
+    <script>
+        /*
+         E:target 表示当前的URL片段的元素类型，这个元素必须是E
+         E:disabled 表示不可点击的表单控件
+         E:enabled 表示可点击的表单控件
+         E:checked 表示已选中的checkbox或radio
+         E:first-line 表示E元素中的第一行
+         E:first-letter 表示E元素中的第一个字符
+         E::selection表示E元素在用户选中文字时
+         E::before 生成内容在E元素前
+         E::after 生成内容在E元素后
+         E:not(s) 表示E元素不被匹配
+         E~F表示E元素毗邻（后面）的F元素
+         Content 属性
+         */
+    </script>
+</head>
+<body>
+<a href="#div1">div1</a>
+<a href="#div2">div2</a>
+<a href="#div3">div3</a>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+</body>
+</html>

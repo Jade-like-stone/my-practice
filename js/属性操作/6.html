@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于表单元素</title>
+</head>
+<body>
+<input type="button" id="input1">
+<script>
+    var oInp=document.getElementById('input1');
+    oInp.onclick=function () {
+        oInp.type='checkbox';
+        //IE6 7 8 不支持  会报错
+    }
+</script>
+</body>
+</html>

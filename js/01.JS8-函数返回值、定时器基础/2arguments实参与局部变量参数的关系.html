@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //当函数参数个数无法确定的时候 用arguments
+        //arguments:实参的集合
+        alert(sum(1,5,6,5));
+        alert(sum(2,5));
+        function sum() {
+            var sum=0;
+            for(var i=0;i<arguments.length;i++){
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+
+        var a=1;
+        function fn2(a) {
+            arguments[0]=3;
+            alert(a);//3
+            var a=4;
+            alert(a);//4
+        }
+        fn2(a);
+        alert(a);//1
+    </script>
+</head>
+<body>
+
+</body>
+</html>

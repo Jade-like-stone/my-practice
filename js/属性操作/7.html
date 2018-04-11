@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float的兼容性问题</title>
+    <style>
+        div{width: 200px;height: 200px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1"> </div>
+技术上：必须掌握兼容性（兼容性问题的解决方案）
+需求上：商量着来（提供最准确的呈现方案）
+<script>
+    var oDiv=document.getElementById('div1');
+    oDiv.style.float='right';
+
+    oDiv.style.styleFloat='right';//  IE
+    oDiv.style.cssFloat='right';//  非IE
+
+
+</script>
+</body>
+</html>

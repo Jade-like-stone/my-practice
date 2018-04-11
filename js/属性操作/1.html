@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{position: absolute;top: 100px;left: 20px;}
+    </style>
+    <script>
+      /*  html的属性操作：
+        属性名 属性值
+
+        属性读操作：获取 找到
+        元素.属性名
+
+        字符串连接 ' + '
+
+        属性写操作：替换 修改
+        元素.属性名=新的值
+
+        oP.innerHTML  读取元素内的所有HTML内容
+       oP.innerHTML =新的值  替换元素的HTML内容
+        */
+      window.onload=function () {
+          var oBtn=document.getElementById('btn');
+          var oText1=document.getElementById('text1');
+          var oText2=document.getElementById('text2');
+          var oSelect1=document.getElementById('select1');
+         var oImg1=document.getElementById('img1');
+         var oP=document.getElementById('p');
+          oBtn.onclick=function(){
+             // alert(oBtn.type);
+//              alert(oText2.value);
+              //alert(oText1.value+'在'+oSelect1.value);
+         //oText1.value=oSelect1.value;
+//              oImg1.src=oText1.value;
+//             alert( oP.innerHTML);
+              oP.innerHTML=oText1.value;
+              oText1.value='';
+          };
+      }
+    </script>
+</head>
+
+<body>
+
+<input type="button" id="btn" value="按钮">
+    <select id="select1">
+        <option value="上海">上海</option>
+        <option value="北京">北京</option>
+        <option value="杭州">杭州</option>
+    </select>
+<input type="text" id="text1">
+    <input type="password" id="text2">
+<img src="img/5.jpg" width="200px;" id="img1">
+<p id="p">这是一个段落</p>
+</body>
+</html>

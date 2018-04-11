@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性读写操作和innerHTML配合实例</title>
+<style>
+    div{width: 200px;height: 200px;border: 1px solid royalblue;padding: 10px;background: ghostwhite;}
+</style>
+    <script>
+        window.onload=function () {
+            var oDiv1=document.getElementById('div1');
+            var oSpan1=document.getElementById('span1');
+            var oText1=document.getElementById('text1');
+            var oBtn1=document.getElementById('btn1');
+            oBtn1.onclick=function () {
+                oDiv1.innerHTML+=oSpan1.innerHTML+oText1.value+"<br>";
+                oText1.value='';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<span id="span1">信管：</span>
+<input type="text" id="text1">
+<input type="button" value="提交" id="btn1">
+</body>
+</html>

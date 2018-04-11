@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{width: 50px;border-bottom: 1px solid black;}
+
+    </style>
+    <script>
+        window.onload=function () {
+            var oUl=document.getElementById('ul');
+            var aLi=oUl.getElementsByTagName('li');
+            var aintro=['前天','昨天','今天','明天'];
+            for(i=0;i<aLi.length;i++)
+            {
+                aLi[i].innerHTML=aintro[i];
+                aLi[i].onclick=function () {
+                   // alert(i);
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<ul id="ul">
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+
+</ul>
+</body>
+</html>

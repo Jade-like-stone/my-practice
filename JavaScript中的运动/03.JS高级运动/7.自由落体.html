@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+        div{width: 100px;height: 100px;position: absolute;top:500px;background: red;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oBtn=document.getElementById('btn');
+            var oDiv=document.getElementById('div1');
+            var timer=null;
+            var iSpeed=-60;
+            var iSpeedX=10;
+            oBtn.onclick=function () {
+            doMove();
+
+            };
+            function doMove() {
+                clearInterval(timer);
+                timer=setInterval(function () {
+                    iSpeed+=3;
+                    var L=oDiv.offsetLeft+iSpeedX;
+                    var T=oDiv.offsetTop+iSpeed;
+                    if (T>document.documentElement.clientHeight-oDiv.offsetHeight){
+                        T=document.documentElement.clientHeight-oDiv.offsetHeight;
+                        iSpeed*=-1;
+                        iSpeed*=0.75;
+                        iSpeedX*=0.75;
+
+                    }
+                    oDiv.style.top=T+'px';
+                    oDiv.style.left=L+'px';
+
+                },30);
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="走起">
+<div id="div1"></div>
+</body>
+</html>

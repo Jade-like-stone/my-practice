@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var that=null;
+            var oBtn=document.getElementsByTagName('input');
+
+            for(var i=0;i<oBtn.length;i++){
+//                oBtn[i].onclick=function () {
+//                    this.style.background='red';//this=>oBtn[i]
+//                };
+               //oBtn[i].onclick=fn1;//red
+                oBtn[i].onclick=function () {
+                   that=this;
+                   fn1();
+                }
+            }
+            function fn1() {
+                that.style.background='red';
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn1">
+<input type="button" id="btn2">
+<input type="button" id="btn3">
+</body>
+</html>

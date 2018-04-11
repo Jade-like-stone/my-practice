@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{width: 100px;height: 100px;background: red;
+        position: absolute; top:50px;}
+</style>
+<body>
+<input type="button" id="btn" value="前进">
+<input type="button" id="btn2" value="后退">
+<div id="div1"></div>
+<script>
+    var oBtn=document.getElementById('btn');
+    var oBtn2=document.getElementById('btn2');
+    var oDiv=document.getElementById('div1');
+    function doMove(obj,attr,dist,target) {
+        dist= parseInt(getStyle(obj,attr))<target?dist:-dist;
+        clearInterval(obj.timer);
+        obj.timer=setInterval(function () {
+            var speed=parseInt(getStyle(obj,attr))+dist;
+
+            if (speed>target&&dist>0){
+                speed=target;
+            }
+            if (speed<target&&dist<0){
+                speed=target;
+            }
+            obj.style[attr]=speed+'px';
+        },100);
+    }
+    oBtn.onclick=function () {
+        doMove(oDiv,'top',20,600);
+
+    };
+    oBtn2.onclick=function () {
+        doMove(oDiv,'top',12,40);
+
+    };
+
+
+    function getStyle(obj,attr) {
+        return getComputedStyle(obj)[attr]?getComputedStyle(obj)[attr]:obj.currentStyle[attr];
+    }
+</script>
+</body>
+</html>

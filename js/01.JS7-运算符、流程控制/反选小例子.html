@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{list-style: none;}
+    </style>
+    <script>
+        window.onload=function () {
+            var onOff=true;
+            var aInp=document.getElementsByTagName('input');
+//            alert(aInp[2].checked);//true
+            aInp[0].onclick=function () {
+                for(var i=1;i<aInp.length;i++){
+                   /*
+                    if(aInp[i].checked){
+                    aInp[i].checked=false;
+                    }else {
+                    aInp[i].checked=true;
+                    }
+                     */
+//                 aInp[i].checked=!aInp[i].checked;
+                    if (onOff){
+                        aInp.checked = true;
+                        onOff=false;
+                    }else{
+                        aInp.checked=false;
+                        onOff=true;
+                    }
+
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<ul>
+    <li><input type="button" value="反向选择"></li>
+    <li><input type="checkbox" checked></li>
+    <li><input type="checkbox" checked></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+</ul>
+
+
+
+
+</body>
+</html>

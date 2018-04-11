@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+/*
+table.tHead---获取表格头部
+table.tFoot--获取表格底部
+table.tBodies--获取表格主体   获取到的是一个集合
+
+tBodies[n].rows/tHead.rows/tFoot.rows    表格的行 就是tr
+
+rows[n].cells    单元格 就是td
+ */
+        window.onload=function () {
+        var oTable=document.getElementsByTagName('table')[0];
+        oTable.tHead.style.background='red';
+        oTable.tBodies[0].style.background='yellow';
+        oTable.tBodies[0].rows[0].style.background='green';
+        oTable.tBodies[0].rows[0].cells[1].style.background='pink';
+
+        }
+    </script>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+        <td>Sum</td>
+        <td>$180</td>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr>
+        <td>January</td>
+        <td>$100</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

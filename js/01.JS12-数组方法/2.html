@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var str='';
+            var num=0;
+            for(var attr in document){
+                str+=num+'.'+attr+':'+document[attr]+'<br>';
+                    num++;
+            }
+
+            document.body.innerHTML=str;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        对象的组成：
+//        方法（行为 操作）---函数：过程、动态的
+//        属性----变量：状态、静态的
+
+        var arr=[];
+//        arr.number=10;//对象下面的变量：对象的属性
+//
+//        alert(arr.number);//10
+//        alert(arr.length);
+
+//
+//        arr.test=function () {//对象下面的函数：对象的方法
+//
+//            alert(123);
+//        }
+//       arr.test();
+
+        //var obj={};//var obj=new Object();
+        var obj=new Object();//创建一个空对象
+        obj.name='小明';//属性
+        obj.showNmae=function () {//方法
+
+            alert(this.name);
+        };
+        obj.showNmae();
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

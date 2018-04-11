@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{width: 100px;height: 100px;background: red;transition:2s;  }
+
+    </style>
+    <script>
+        /*
+         transition过渡：
+         transition-property  要运动的样式  （all || [attr] || none）
+         transition-duration 运动时间
+         transition-delay 延迟时间
+         transition-timing-function 运动形式
+         ease：（逐渐变慢）默认值
+         linear：（匀速）
+         ease-in：(加速)
+         ease-out：（减速）
+         ease-in-out：（先加速后减速）
+         cubic-bezier 贝塞尔曲线（ x1, y1, x2, y2 ） http://matthewlein.com/ceaser/
+         实例：幻灯片效果
+
+
+         过渡完成事件
+         Webkit内核： obj.addEventListener('webkitTransitionEnd',function(){},false);
+         firefox: obj.addEventListener('transitionend',function(){},false);
+
+         */
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+            oDiv.onclick=function () {
+                this.style.width=this.offsetWidth+100+'px';
+//                this.style.height=this.offsetHeight+100+'px';
+                addEnd(oDiv,end);
+            };
+
+
+            function end() {
+                this.style.width=this.offsetWidth+100+'px';
+                alert(this.offsetWidth+'px');//执行两次 每次样式改变都会触发addEnd
+                removeEnd(this,end);
+            }
+
+            function addEnd(obj,fn) {
+                obj.addEventListener('webkitTransitionEnd',fn,false);
+                obj.addEventListener('transitionend',fn,false);
+            }
+            function removeEnd(obj,fn) {
+                obj.removeEventListener('webkitTransitionEnd',fn,false);
+                obj.removeEventListener('transitionend',fn,false);
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

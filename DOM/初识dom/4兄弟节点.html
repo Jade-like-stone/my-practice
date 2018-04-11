@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{width: 100px;background: red;margin: 10px;}
+    </style>
+    <script>
+        /*
+        找到某个元素的下个兄弟节点;
+         nextElementSibling
+
+         找到某个元素的上个兄弟节点;
+         previousElementSibling
+
+         某个元素下的第一个子节点：firstElementChild
+
+         某个元素下的最后一个子节点 lastElementChild
+         */
+
+
+        window.onload=function () {
+            var oUl=document.getElementsByTagName('ul')[0];
+          var aLi=oUl.children;
+          aLi[0].nextElementSibling.style.background='yellow';
+            aLi[1].previousElementSibling.style.background='green';
+            oUl.firstElementChild.style.background='orange';
+            oUl.lastElementChild.style.background='blue';
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

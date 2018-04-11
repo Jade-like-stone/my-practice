@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:100px;height: 100px;background: red;position: absolute;}
+    </style>
+    <script>
+        /*
+        event:事件对象：当一个事件发生的时候，和当前这个对象发生的这个事件有关
+        的一些详细的信息都会被临时保存到一个指定地方-event对象
+        供我们在需要的时候调用  飞机-黑匣子
+
+        事件对象：在事件调用的函数里使用
+
+        事件函数：事件调用的函数，一个函数是不是事件函数，不是定义的时候决定
+        而是取决于这个调用的时候
+
+        兼容：
+        IE、Chrome：event是一个内置全局对象
+        标准的：事件对象是通过事件函数的第一个参数传入的
+
+        如果一个函数是被事件调用的，那么这个函数定义的第一个参数就是
+
+        clientX/Y   //当事件发生时，鼠标到页面可视区的位置
+         onmousemove：当鼠标在一个元素上面移动的时候出发
+         触发频率不是像素，而是间隔时间，在一个指定的时间内，
+            如果鼠标的位置和上一次的位置发生了变化，那么就会触发一次
+         */
+//        alert(event);//undefind
+//        function fn1(ev) {
+//
+//            var ev=ev||event;
+//            alert(ev);
+//            for(var attr in ev){
+//                console.log(attr+'='+ev[attr]);
+//            }
+//        }
+//        document.onclick=fn1;//[object MouseEvent]
+
+        window.onload=function () {
+
+            var oDiv=document.getElementsByTagName('div')[0];
+
+            document.onmousemove=function (ev) {
+                var ev=ev || event;
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                oDiv.style.left=ev.clientX+scrollTop+'px';
+                oDiv.style.top=ev.clientY+'px';
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

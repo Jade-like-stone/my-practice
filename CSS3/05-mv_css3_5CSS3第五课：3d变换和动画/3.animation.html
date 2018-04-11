@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes move {
+        0%{
+            width: 100px;
+        }
+        100%{
+            width:500px;
+        }
+        }
+
+
+
+        .box{width: 100px;height: 100px;background: red;;}
+        .move{animation:3s move}
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    document.getElementsByTagName('div')[0].onclick=function () {
+        this.className='box move';
+        addEnd(this,fn);
+    };
+    function fn() {
+        alert('end');
+    }
+    function addEnd(obj,fn) {
+        obj.addEventListener('animationend', fn, false);
+        obj.addEventListener('WebkitAnimationEnd', fn, false);
+
+    }
+</script>
+</body>
+</html>

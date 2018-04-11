@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str='www.baidu.com';
+        //split 把字符串分割为数组
+        //alert(str.split('.'))//www,baidu,com
+
+        var str1='sun';
+       // alert(str1.split());//['sun'] 如果不放分隔符 就把整个当做分隔符
+
+        var str2='wang';
+      //  alert(str2.split(''));//['w','a','n','g']空字符串作为分割
+
+        var str3='瞒天过海';
+        //alert(str3.split('天'));//瞒,过海 以天作为分隔符
+
+        var str4='/www.baidu.com/';
+        //alert(str4.split('/'));//   ,www.baidu.com,  长度为3
+
+        var str4='2018-01-16-14-28';
+        alert(str4.split('-',3));//切为5段 限制长度前3个
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

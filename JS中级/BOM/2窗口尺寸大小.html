@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{height: 2000px;}
+    </style>
+    <script>
+        window.onload=function () {
+            /*
+            可视区的尺寸
+            document.documentElement.clientWidth
+             document.documentElement.clientHeight
+
+             滚动距离
+             document.body.scrollTop/scrollLeft//谷歌
+             document.documentElement.scrollTop/scrollLeft
+
+             内容高：oDiv.scrollHeight(Width)
+             除去边框在盒子里面的高度（宽度）包括padding
+
+             文档高度
+             document.documentElement.offsetHeight
+             document.body.offsetHeight
+
+             window对象常用事件
+             onscroll 当滚动条触发  window.onscroll=function(){}
+             onresize 当窗口大小发生改变触发
+
+             */
+//            alert(document.documentElement.clientHeight)
+            document.onclick=function () {
+                var scrollTop= document.body.scrollTop||document.documentElement.scrollTop;
+                alert(scrollTop)
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

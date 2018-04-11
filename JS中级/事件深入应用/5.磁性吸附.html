@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;
+            padding:0;}
+        div{width: 100px;height: 100px;background: red;position:absolute}
+        img{position: absolute}
+    </style>
+    <script>
+        /*
+         在移动的过程中限制拖拽对象的left值和top值
+         */
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+            var oImg=document.getElementsByTagName('img')[0];
+            draft(oImg);
+            draft(oDiv);
+
+            function draft(obj) {
+                obj.onmousedown=function (ev) {
+                    var oev=ev||event;
+
+                    var disX=oev.clientX-obj.offsetLeft;
+                    var disY=oev.clientY-obj.offsetTop;
+                    if(obj.setCapture)
+                    {obj.setCapture()}
+                    document.onmousemove=function (ev) {
+                        var oev=ev||event;
+
+                        var L=oev.clientX-disX;
+                        var T=oev.clientY-disY;
+
+                        if(L<50){
+                           L=0;
+                        }else if(L>document.documentElement.clientWidth-obj.offsetWidth){
+                            L=document.documentElement.clientWidth-obj.offsetWidth;
+                        }
+                        if(T<0){
+                            T=0;
+                        }else if(T>document.documentElement.clientHeight-obj.offsetHeight){
+                            T=document.documentElement.clientHeight-obj.offsetHeight;
+                        }
+
+                        obj.style.left=L+'px';
+                        obj.style.top=T+'px';
+                    };
+                    document.onmouseup=function () {
+                        document.onmousemove=document.onmouseup=null;
+                        if (obj.releaseCapture){
+                            obj.releaseCapture();}
+                    };
+                    return false;
+                };
+            }
+
+
+        }
+
+    </script>
+</head>
+<body style="height: 1000px;">
+<img src="img/cemara.png">
+<div></div>
+</body>
+</html>

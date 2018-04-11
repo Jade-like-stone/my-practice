@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width: 100px;height:200px;border:1px solid red;position:absolute;
+            display: none;}
+    </style>
+    <script>
+        /*
+        事件默认行为：当一个事件发生的时候浏览器自己会默认做的事情
+        怎么阻止？
+        当前这个行为是什么事件触发的 然后在这个时间的处理函数中使用
+                return  false
+
+           oncontextmenu:右键菜单事件 当右键菜单（环境菜单）显示出来的时候触发
+         */
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+
+            document.oncontextmenu=function (ev) {
+                oDiv.style.display='block';
+                var oev=ev||event;
+                oDiv.style.left=oev.clientX+'px';
+                oDiv.style.top=oev.clientY+'px';
+                return false;
+            };
+
+            document.onclick=function () {
+                oDiv.style.display='none';
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

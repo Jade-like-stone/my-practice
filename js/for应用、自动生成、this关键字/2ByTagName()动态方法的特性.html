@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+           document.title='动态方法的特性';
+           var oBtn=document.getElementsByTagName('input');
+           document.body.innerHTML='<input type="button" value="按钮"><input type="button" value="按钮"><input type="button" value="按钮">';
+           oBtn[0].onclick=function () {
+               alert(1);
+           };
+            oBtn[1].onclick=function () {
+                alert(2);
+            };
+            oBtn[2].onclick=function () {
+                alert(2);
+            }
+        }
+    </script>
+
+</head>
+<body>
+1.id前面只能跟一个document 不能跟别的元素的名字(对象) ByTagName都可以跟
+2 id找一个  ByTagName找一堆元素的集合 访问的时候用中括号
+3.id只能找到已经存在的   ByTagName则可以找到动态添加的
+
+</body>
+</html>

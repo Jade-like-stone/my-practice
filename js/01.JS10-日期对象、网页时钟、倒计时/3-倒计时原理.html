@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        倒计时：
+        现在的时间点：在变
+        未来的时间点：不变
+
+
+
+        数字格式：new Date(2013,4,1,9,48,12)
+        字符串形式：new Date('June 10,2013,12:12:12')
+        天：Math.floor(t/86400)
+        时：Math.floor(t%86400/3600)
+        分：Math.floor(t%86400%3600/60)
+        秒：t%60
+         */
+        window.onload=function () {
+            lastTime();
+            setInterval(lastTime,1000);
+            function lastTime() {
+                var iNow=new Date();
+                var iNew=new Date(2018,0,16,15,15,0);
+
+                var t=Math.floor((iNew-iNow)/1000);//毫秒转化为秒
+                var str=Math.floor(t/86400)+'天'+ Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';
+
+                document.body.innerHTML=str;
+            }
+
+        };
+
+    </script>
+</head>
+<body style="text-align: center;font-size: 50px;">
+
+</body>
+</html>

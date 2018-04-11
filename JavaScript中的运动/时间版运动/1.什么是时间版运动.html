@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:100px;height: 100px;background: red;}
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            //复习jq的animate
+//            1.运动的属性和目标点的集合=》{}
+//            2.时间 默认：400ms
+//            3.运动形式 swing（慢快慢）linear（匀速）
+//              4.回调函数
+            /*
+             Tween公式
+             4个参数
+             t：current  time（当前时间）
+             b：beginning  value（初始值）
+             c： change  in  value（变化量）
+             d：duration（持续时间）
+             return  （目标点）
+
+             */
+            $('#div1').click(function () {
+                $(this).animate({'width':300,'height':400},1000,'linear',function () {
+                    alert(123);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

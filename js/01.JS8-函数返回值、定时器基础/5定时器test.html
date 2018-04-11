@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var aInp=document.getElementsByTagName('input');
+            var num=0;
+            var body=document.body;
+            var timer=null;
+            var arrSrc=['img/1.png','img/1.jpg','img/2.png','img/2.jpg','img/3.png','img/3.jpg','img/4.png','img/4.jpg'];
+            aInp[0].onclick=function () {
+                clearInterval(timer);//如果有用户操作要先清除定时器，再设置定时器
+              timer=setInterval(function () {
+                  body.style.background='url('+arrSrc[num]+')';
+                  num++;
+                  num%=arrSrc.length;
+              },500);
+            };
+            aInp[1].onclick=function () {
+            clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="点我换背景">
+<input type="button" value="stop!我要这个！">
+</body>
+</html>

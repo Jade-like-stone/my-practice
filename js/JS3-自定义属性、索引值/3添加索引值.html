@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var arr=['张三','李四','王五'];
+            var aBtn=document.getElementsByTagName('input');
+            var aP=document.getElementsByTagName('p');
+           //想建立匹配关系 就用索引值
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function () {
+                this.value=arr[this.index];
+                aP[this.index].innerHTML=arr[this.index];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button">
+<input type="button">
+<input type="button">
+<p></p>
+<p></p>
+<p></p>
+</body>
+</html>

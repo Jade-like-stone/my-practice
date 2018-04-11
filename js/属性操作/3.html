@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性读写操作注意事项</title>
+    <script>
+        window.onload=function () {
+            var oBtn1=document.getElementById('btn1');
+            var oBtn2=document.getElementById('btn2');
+            var oP1=document.getElementById('p1');
+            var num=16;
+            var str='';
+            oBtn2.onclick=function () {
+                num++;
+                oP1.style.fontSize=num+'px';//js中不允许出现-
+            };
+            oBtn1.onclick=function () {
+                num--;
+                oP1.style.fontSize=num+'px';//js中不允许出现-
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="-" id="btn1">
+<input type="button" value="+" id="btn2">
+<p id="p1" style="font-size: 16px;">
+    我已经老了，有一天在一处公共场所的大厅里，
+    有一个男人像我走来，他主动介绍自己，
+    他对我说：“我认识你，我永远记得你，
+    那时候你还很年轻，人人都说你美，
+    现在我是特来告诉你，对我来说，
+    我觉得现在你比年轻的时候更美，
+    那时你是年轻女人，与你那时的面貌相比，
+    我更爱你现在备受催残的面容”
+</p>
+</body>
+</html>

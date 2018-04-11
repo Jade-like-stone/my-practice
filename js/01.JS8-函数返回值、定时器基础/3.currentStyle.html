@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width: 100px;height: 120px;
+            background:red;}
+    </style>
+    <script src="js/my.js"></script>
+    <script>
+        $(function () {
+            $('btn1').onclick = function(){
+//                alert( $('div1').style.width );
+               //alert( getComputedStyle( $('div1') ).width );			// IE6 7 8 不兼容
+
+                 //alert( $('div1').currentStyle.width );										// 标准浏览器不兼容
+                alert(getStyle($('div1'),'width'));
+                alert( getStyle( $('div1'), 'marginRight' ) );
+
+                /*
+                 获取到的是计算机（浏览器）计算后的样式
+
+                 background: url() red ……		复合样式（不要获取）
+                 backgroundColor									单一样式（不要用来做判断）
+
+                要获取单一样式
+
+                 不要有空格
+
+                 不要获取未设置后的样式：不兼容
+                 */
+
+            }
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="点击" id="btn1">
+<div id="div1"></div>
+</body>
+</html>

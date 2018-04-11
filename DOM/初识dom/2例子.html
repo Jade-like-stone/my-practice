@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{width: 100px;background: red;margin: 10px;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oUl=document.getElementsByTagName('ul')[0];
+            //var aLi=oUl.childNodes;
+           // alert(aLi.length) 11 包括元素节点和文本节点
+            var aLi=oUl.children;
+            //alert(aLi.length);//5
+            document.onclick=function () {
+                for (var i=0;i<aLi.length;i++){
+//                    if(aLi[i].nodeType===1){
+//                        aLi[i].style.width='300px';
+//                    }
+                    // aLi[i].style.width=300+'px';//Uncaught TypeError: Cannot set property 'width' of undefinedat window.onload
+                    aLi[i].style.width='300px';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

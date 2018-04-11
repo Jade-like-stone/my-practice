@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+        body{margin: 0;padding:0;text-align: center;background: black;}
+        h1{color: rgba(255,255,255,0.2);display: inline-block;font:50px/100px '宋体';
+           background: -webkit-linear-gradient(44deg,rgba(255,255,255,0) 53px,rgba(255,255,255,1) 68px,rgba(255,255,255,1) 78px,
+           rgba(255,255,255,0) 93px) no-repeat ;-webkit-background-clip: text;}
+    </style>
+    <script>
+        window.onload=function () {
+
+            var oH1=document.getElementsByTagName('h1')[0];
+            var timer=0;
+            var str=-300;
+            toMove();
+            function toMove() {
+                clearInterval(timer);
+                timer=setInterval(function () {
+                    str+=10;
+                    if (str==900){
+                        clearInterval(timer);
+                        str=-300;
+                    }
+                    oH1.style.backgroundPosition=str+'px';
+                },30);
+            }
+           setInterval(toMove,2000);
+
+        }
+
+
+    </script>
+</head>
+<body>
+<h1>--齐天大圣--</h1>
+</body>
+</html>

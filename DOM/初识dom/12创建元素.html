@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //创建元素 ：document.createElement('标签名字')
+        //插入元素：父节点+appendChild(子节点）//往一个节点下面添加一个子节点 添加在最后
+        window.onload=function () {
+            var oBtn=document.getElementsByTagName('input')[0];
+            var ul=document.getElementsByTagName('ul')[0];
+
+            var num=0;
+
+            oBtn.onclick=function () {
+                num++;
+                var li=document.createElement('li');
+                li.innerHTML=num;
+                ul.appendChild(li);
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="添加li">
+<ul>
+
+</ul>
+</body>
+</html>

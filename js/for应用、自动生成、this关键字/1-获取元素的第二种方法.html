@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document.getElementsByTagName('')</title>
+</head>
+<body>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+getElementsByTagName 是找一组元素 get前是谁要分清楚  没有指定就找全部
+getElementsByTagName('')[0]
+<script>
+    /*
+    * #list{}  var oUl=document.getElementById('list');   静态方法
+    *
+    * li{}  document.getElementsByTagName('li');    动态方法
+    * #list li{} var aLi=oUl.getElementsByTagName('li');
+    *          aLi=>[li,li,li]   aLi[0]
+    *          在用TagName 时必须加上中括号
+    *
+    * */
+    var oUl=document.getElementById('list');
+    var oLi=oUl.getElementsByTagName('li');
+   //  alert(oLi.length);//3
+</script>
+</body>
+</html>

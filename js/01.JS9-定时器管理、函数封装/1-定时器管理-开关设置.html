@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{width: 100px;height: 100px;background: red;
+        position: absolute; top:50px;}
+</style>
+<body>
+<input type="button" id="btn" value="移动">
+<div id="div1"></div>
+<script>
+    var oBtn=document.getElementById('btn');
+    var oDiv=document.getElementById('div1');
+oBtn.onclick=function () {
+    clearInterval(oDiv.timer);
+    oDiv.timer=setInterval(function () {
+        var speed=parseInt(getStyle(oDiv,'left'))+8;
+
+        if (speed>900){
+            speed=900;
+        }
+        oDiv.style.left=speed+'px';
+    },50);
+
+};
+
+
+    function getStyle(obj,attr) {
+        return getComputedStyle(obj)[attr]?getComputedStyle(obj)[attr]:obj.currentStyle[attr];
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;
+            padding:0;}
+        div{width: 100px;height: 100px;background: red;position:absolute}
+        img{position: absolute;top:200px;left:550px;width: 200px;height: 200px;border:1px solid red;}
+    </style>
+    <script>
+        /*
+         在移动的过程中限制拖拽对象的left值和top值
+         */
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+            var oImg=document.getElementsByTagName('img')[0];
+            draft(oImg);
+            draft(oDiv);
+
+            function draft(obj) {
+                obj.onmousedown=function (ev) {
+                    var oev=ev||event;
+
+                    var disX=oev.clientX-obj.offsetLeft;
+                    var disY=oev.clientY-obj.offsetTop;
+                    if(obj.setCapture)
+                    {obj.setCapture()}
+                    document.onmousemove=function (ev) {
+                        var oev=ev||event;
+
+                        var L=oev.clientX-disX;
+                        var T=oev.clientY-disY;
+
+                        var L1=L;
+                        var R1=L+obj.offsetWidth;
+                        var T1=T;
+                        var B1=T1+obj.offsetHeight;
+
+                        var L2=oImg.offsetLeft;
+                        var R2=L2+oImg.offsetWidth;
+                        var T2=oImg.offsetTop;
+                        var B2=T2+oImg.offsetHeight;
+
+                    if(R1<L2||L1>R2||B1<T2||T1>B2){//
+                        oImg.src='img/cemara.png';
+                    }else {
+                        oImg.src='img/necklace.JPG';
+                    }
+
+                        obj.style.left=L+'px';
+                        obj.style.top=T+'px';
+                    };
+                    document.onmouseup=function () {
+                        document.onmousemove=document.onmouseup=null;
+                        if (obj.releaseCapture){
+                            obj.releaseCapture();}
+                    };
+                    return false;
+                };
+            }
+
+
+        }
+
+    </script>
+</head>
+<body style="height: 1000px;">
+<img src="img/cemara.png">
+<div></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .wp_column column {border-top:none; border-bottom:none;}
+
+        .wp_listcolumn .wp_column a{
+            display: block;
+            width: 99%;
+            color: #666;
+            font-size: 13px;
+            font-weight: bold;
+            word-wrap: normal;
+            background: none;
+            border-bottom: 1px solid #c5c5c5;
+            border-top: none;
+            text-align: center;
+            background: 2;
+        }
+
+        .wp_listcolumn { display: block; width: 100%; }
+        .wp_listcolumn .wp_column { display: block; width: 100%; vertical-align: bottom; }
+        .wp_listcolumn .wp_column a { display: block; width: 100%; color: rgb(102, 102, 102); font-size: 15px; font-weight: bold; overflow-wrap: break-word; background: rgb(245, 245, 245) none no-repeat scroll 6px 12px; border-bottom: 1px solid rgb(221, 221, 221); border-top: 1px solid rgb(255, 255, 255); text-align: left; }
+        .wp_listcolumn .wp_column a:hover { color: rgb(204, 0, 0); background-color: rgb(249, 249, 249); }
+        .wp_listcolumn .wp_column a:hover .column-name { }
+        .wp_listcolumn .wp_column a.selected { color: rgb(255, 255, 255); background-color: red; }
+        .wp_listcolumn .wp_column a.parent { }
+        .wp_listcolumn .wp_column a.parent .column-name { text-decoration: none; }
+        .wp_listcolumn .wp_column a .column-name { display: inline-block; line-height: 22px; padding: 5px 10px 5px 20px; cursor: pointer; }
+        .wp_listcolumn .wp_subcolumn { border-top: 1px solid rgb(255, 255, 255); }
+        .wp_listcolumn .wp_subcolumn .wp_column a { color: rgb(85, 85, 85); font-size: 14px; border-bottom: 1px solid rgb(170, 170, 170); border-top: medium none; background: rgb(241, 241, 241) none no-repeat scroll 16px 10px; }
+        .wp_listcolumn .wp_subcolumn .wp_column a:hover { color: rgb(204, 51, 0); background-color: rgb(247, 247, 247); }
+        .wp_listcolumn .wp_subcolumn .wp_column a .column-name { line-height: 20px; padding-left: 50px; }
+    </style>
+</head>
+<body>
+<div class="big">
+<div id="div1">
+    <div class="div1">
+        <div class="div2">
+            <a>123</a>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

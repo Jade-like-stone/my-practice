@@ -1,0 +1,46 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+
+            /*
+             删除节点：
+             父级.removeChild(指定的子节点)
+             注意：如果指定的子节点没有，就会报错，要用判断解决
+             */
+            window.onload=function () {
+            var aBtn=document.getElementsByTagName('input');
+            var ul=document.getElementsByTagName('ul')[0];
+
+            var num=0;
+
+            aBtn[0].onclick=function () {
+                num++;
+                var li=document.createElement('li');//创建元素
+                li.innerHTML=num;
+                ul.insertBefore(li,ul.children[0]);//在ul的第一个子节点前插入元素
+
+            };
+                aBtn[1].onclick=function () {
+                    if (ul.lastElementChild){
+                        num--;
+                        ul.removeChild(ul.lastElementChild);
+                    }
+
+
+                }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="添加li">
+<input type="button" value="删除li">
+<ul>
+
+</ul>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{width: 300px;height: 300px;
+            background: -webkit-linear-gradient(-45deg,rgba(255,255,255,0),rgba(255,255,255,0) 49%,rgba(255,255,255,0.8) 49%,
+            rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%) no-repeat -283px 0 ,url(img/new.jpg) ;
+        background: -ms-linear-gradient(-45deg,rgba(255,255,255,0),rgba(255,255,255,0) 49%,rgba(255,255,255,0.8) 49%,
+            rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%) no-repeat -283px 0 ,url(img/new.jpg);transition:1s;
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ff0000',GradientType=1);
+            /*ie9及以下都得使用filter 只能用开始和结束两个颜色 最后参数为1表示由左向右 0表示自上而下 */
+            }
+        .box:hover{background-position: 300px 0,0 0;}
+    </style>
+    <script>
+        /*
+
+         */
+    </script>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

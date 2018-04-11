@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{width: 600px;height: 600px;margin:50px auto;transition:5s linear}
+        .box div{width: 280px;height: 280px;border:10px solid black;box-sizing: border-box;float: left;margin:10px;
+                background: yellow;}
+        .box div:nth-child(1), .box div:nth-child(4){border-radius:0 80%;}
+        .box div:nth-child(2), .box div:nth-child(3){border-radius:80% 0;}
+        .box:hover{transform: rotate(720deg);}
+    </style>
+    <script>
+        /*
+         border-radius: 1-4个数字 / 1-4个数字
+         前面是水平，后面是垂直
+         不给“/”则水平和垂直一样
+         border-radius: 10px/5px;
+         参数
+         各种长度单位都可以：px，%，…
+         %有时很方便
+         但宽高不一致时不太好
+
+         用法
+         1个：都一样
+         border-radius: 一样
+         2个：对角
+         border-radius: 左上&右下    右上&左下
+         3个：斜对角
+         border-radius: 左上    右上&左下    右下
+         4个：全部，顺时针
+         border-radius: 左上    右上    右下    左下
+
+         边框图片 border-image
+         border-image-sourceg 引入图片
+         border-image-slice 切割图片
+         border-image-width 边框宽度
+         border-image-repeat 图片的排列方式
+         round  重复,repeat 平铺,stretch拉伸
+         边框颜色 border-colors//只能在火狐下使用
+
+
+         线性渐变实例(2)
+         加入点的位置
+         top, red 40%, green 60%
+         top, red 50%, green 50%
+         同一个位置两个点——直接跳变
+         也可以用px
+         配合rgba
+         top, rgba(255,255,255,1), rgba(255,255,255,0)
+         加入背景图片
+         background: -webkit-linear-gradient (top, rgba(255,255,255,1) 30%, rgba(255,255,255,0)), url(a.gif)
+         实例：百度音乐图片光影效果
+
+
+           径向渐变：
+         radial-gradient([<起点>]? [<形状> || <大小>,]? <点>, <点>…);
+         起点：可以是关键字（left,top,right,bottom），具体数值或百分比
+         形状： ellipse、circle
+         大小 :具体数值或百分比，也可以是关键字（最近端，最近角，最远端，最远角，包含或覆盖 (closest-side, closest-corner, farthest-side, farthest-corner, contain or cover)）;
+         注意firefox目前只支持关键字
+
+         背景：
+         多背景
+         逗号分开
+         background: url(a.jpg) 0 0, url(b.jpg) 0 100%;
+
+         背景尺寸
+         background-size:x y
+         background-size:100% 100%
+         Cover 放大
+         Contain 缩小
+
+         background-origin ： border | padding | content
+         border-box： 从border区域开始显示背景。
+         padding-box： 从padding区域开始显示背景。
+         content-box： 从content区域开始显示背景。
+
+         background-clip
+         border： 从border区域向外裁剪背景。
+         padding： 从padding区域向外裁剪背景。
+         content： 从content区域向外裁剪背景。
+         no-clip： 从border区域向外裁剪背景。
+         实例：iphone开机动画
+
+        遮罩：
+         Mask-image
+         Mask-position
+         Mask-repeat
+         实例：特殊形状的幻灯片效果
+
+
+         */
+    </script>
+</head>
+<body>
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

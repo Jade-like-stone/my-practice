@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        div{width: 100px;height: 100px;background: red;position: absolute;
+            left:1000px;top:40px;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div1');
+            var oInp=document.getElementsByTagName('input')[0];
+            var timer=null;
+            oInp.onclick=function () {
+                clearInterval(timer);
+                var iSpeed=0;
+                timer=setInterval(function () {
+                    iSpeed=(500-oDiv.offsetLeft)/15;
+                    iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+
+                    if (oDiv.offsetLeft==500){
+                        clearInterval(timer);
+                    }else {
+                        oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+                    }
+                },30);
+            }
+
+
+
+
+
+
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="运动起来">
+<div id="div1">
+
+</div>
+
+</body>
+</html>

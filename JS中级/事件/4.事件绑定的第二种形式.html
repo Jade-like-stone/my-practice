@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        给一个对象绑定一个事件处理函数的第一种形式
+        obj.onclick=fn;  赋值 后面会覆盖前面
+
+        为了解决覆盖问题
+        给一个对象的同一个事件绑定多个不同的函数
+        第二种形式：
+
+         IE10及以下:obj.attachEvent(事件名称，事件函数)
+                    1.没有捕获
+                    2.事件名称有on
+                    3.IE8及以下为倒序，IE9-11为正序
+                    4.this指向window
+        标准：(IE8及以下不支持)obj.addEventListener(事件名称，事件函数，是否捕获)
+            默认false冒泡 自下而上 true：捕获自上而下 先捕获后冒泡（先进来后出去）
+                    1.有捕获
+                    2.事件名称没有on
+                    3.事件执行的顺序为正序
+                    4.this指向触发事件的对象
+
+            call  函数下的一个方法  fn()==fn.call();
+            call()的第一个参数会改变函数执行中this的指向 如果为null，则不改变this指向
+                    第二个参数就是原来函数的参数列表
+         */
+        window.onload=function () {
+            function fn1() {
+                alert(this);
+            }
+            function fn2() {
+                alert(2);
+            }
+//            document.attachEvent('onclick',function () {
+//                fn1.call(document);
+//            });//IE10及以下
+//            document.attachEvent('onclick',fn2);
+//            document.addEventListener('click',fn1,false);
+//           document.addEventListener('click',fn2,false);
+     function bind(obj,evname,fn) {
+         if(obj.addEventListener){
+             obj.addEventListener(evname,fn,false);
+         }else {
+             obj.attachEvent('on'+evname,function () {
+                 fn.call(obj);
+             })
+         }
+     }
+     bind(document,'click',fn2);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

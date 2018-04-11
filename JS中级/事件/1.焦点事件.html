@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            /*
+            焦点：使浏览器能够区分用户输入的对象，当一个元素有焦点的时候就可以接收用户
+            的收入 设置焦点：
+            1.点击
+            2.tab
+            3.js
+                obj.focus();给指定元素设置焦点
+                obj.blur()取消指定元素的焦点
+                obj.select() 选择指定元素的文本内容
+            不是所有元素都可以接收焦点 能够响应用户操作的元素才有焦点
+             */
+            var oBtn=document.getElementsByTagName('input')[4];
+            var oInp=document.getElementsByTagName('input')[0];
+            oInp.onfocus=function () {
+                if (this.value=="快来输入啊"){
+                    this.value="";
+                }
+            };
+            oInp.onblur=function () {//当元素失去焦点的时候
+                    if (this.value==''){
+                        this.value="快来输入啊";
+                    }
+            }
+            oInp.focus();
+            oInp.blur();
+            oBtn.onclick=function () {
+                oInp.select();//可交互性元素的文本内容
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" value="快来输入啊">
+<input type="text">
+<input type="text">
+<div>div</div>
+<a href="http://www.baidu.com">百度</a>
+<input type="text">
+<input type="button" value="全选">
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       /*
+        var num=0;
+
+        function fn1() {
+            num++;
+            alert(num);
+        }
+        function fn2() {
+            num--;
+        }
+        fn1();
+        fn2();
+        fn1();
+        alert(num);*/
+
+       想要获取函数内部的值：
+        1.一个全局变量改变赋值
+       var str='';
+       function fn1() {
+           var a=123;
+           str=a;
+       }
+       alert(str);
+        2.局部函数调用
+        function fn2() {
+            var f='大鸡腿';
+            fn3(f);
+        }
+        fn2();//大鸡腿
+        function fn3(aa) {
+            alert(aa);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

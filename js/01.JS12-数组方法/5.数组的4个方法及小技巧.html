@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        var arr=[1,2,4];
+//        arr.push('b');//向数组的最后一位添加b
+//        arr.unshift('a');//向数组的第一位添加a
+//
+//        arr.pop();//移除数组中的最后一位
+//        arr.shift();//移除数组中的第一位
+//        alert(arr);
+
+        var arr=['good','well','better','best'];
+        //整体位置向后挪一位
+        //alert(arr.unshift(arr.pop()))//4  返回操作过后数组的长度
+arr.unshift(arr.pop());
+
+        //整体向前挪一位
+        arr.push(arr.shift());
+        alert(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

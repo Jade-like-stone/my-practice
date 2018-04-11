@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1,#div2{position: absolute;top:0;left: 0;}
+        #div2{color: red;width: 16px;height: 18px;overflow: hidden;}
+        #div2 span{
+            position: absolute;top:0;
+            left:0;width: 1000px;height: 18px;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv2=document.getElementById('div2');
+            var oSpan=oDiv2.getElementsByTagName('span')[0];
+
+            setInterval(function () {
+                oDiv2.style.left=oDiv2.offsetLeft+1+'px';
+                oSpan.style.left=-oDiv2.offsetLeft+'px';
+            },30);
+        }
+    </script>
+</head>
+<body>
+<div id="div1"><span>我怕我没有机会和你说一声再见，也许明天就再也见不到你</span></div>
+<div id="div2"><span>我怕我没有机会和你说一声再见，也许明天就再也见不到你</span></div>
+</body>
+</html>

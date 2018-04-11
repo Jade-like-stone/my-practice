@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--1.实现布局-->
+    <!--2.实现原理-->
+    <!--3.了解js语法-->
+    <!--希望把某个元素移除你的视线-->
+    <!--1.display:none 显示为无-->
+    <!--2.visibility:hidden;隐藏-->
+    <!--3.width/height-->
+    <!--4.透明度-->
+    <!--5.left/stop-->
+    <!--6.拿一个与背景颜色相同的div盖上-->
+    <!--7.margin 负值-->
+    <style>
+    .lis{list-style: none;width: 80px;height:30px;border:1px solid #000;position: relative;}
+   .lis a{display: block;line-height: 30px;text-align: center;text-decoration: none;color:#000;background: #f1f1f1;}
+    ul ul{margin: 0;padding:0;width: 140px;border:1px solid #333;position:absolute;top:30px;left: -1px;list-style: none;
+            background:lightgoldenrodyellow;display: none;}
+    ul ul li{text-align: center;line-height: 30px;}
+
+    </style>
+    <script>
+        /*1.获取元素
+         * 1.通过id名称获取元素
+         * document get element by id 'link'
+         * document.getElementById('link');
+         *
+         * 事件：鼠标事件 键盘事件 窗口系统事件 表单事件 自定义事件
+         * 鼠标：onclick
+         *       onmouseover 鼠标移入
+         *       onmouseout  鼠标移出
+         *       onmouseup   鼠标抬起
+         *       onmousedown 鼠标点下
+         *       onmousemove  抚摸事件
+         *
+         *       onload 加载完以后再执行
+         *       window.onload=事情
+         *       img.onload
+         *       body.onload
+         *       如何添加事件
+         *       元素.onmouseover
+         *
+         *       函数：可以理解为命令 做一些事儿
+         *       function fnameo(){...不会主动执行}
+         *       1.直接调用：fname();
+         *       2.事件调用：元素.事件=函数名 （oDiv.onclick=fname;）
+         3.测试 alert(1) 带一个确定按钮的警告框
+         alert('ok') 字符串
+
+         function(){} 匿名函数
+         元素.事件=function(){}
+         初学者：随时写随时测试
+
+         变量 var li=document.getElementById('lis');
+         * */
+        window.onload=function () {
+           var li= document.getElementById('lis');
+           var ul= document.getElementById('ul1');
+           var a=document.getElementById('link');
+           li.onmouseover=function () {
+            ul.style.display='block';
+            a.style.background='red';
+           };
+           li.onmouseout=function () {
+               ul.style.display='none';
+               a.style.background='#f1f1f1';
+           };
+
+        }
+
+    </script>
+</head>
+<body>
+<ul>
+    <li class="lis" id="lis">
+        <a href="#" id="link">微博</a>
+        <ul id="ul1">
+            <li>私信</li>
+            <li>评论</li>
+            <li>@我</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

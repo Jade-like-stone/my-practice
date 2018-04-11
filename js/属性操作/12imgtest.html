@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #div{width: 300px;height: 300px;margin:50px auto ;position: relative;text-align: center}
+        input{ position: absolute;left: 45%;top: 20px;}
+        #order{margin-left:70px;}
+        #div a{width:40px;height: 40px;line-height:40px;text-align:center;display: block;background: rgba(255,255,255,0.6);text-decoration: none;
+            position: absolute;top: 125px;font-size: 20px;}
+        #div a:hover{background: rgba(255,255,255,0.9);color: black;}
+        #left{float: left;}
+        #right{float: right;left: 260px;}
+        #div span,#div p{width: 300px;height: 20px;line-height:20px;background: black;color: white;position: absolute;}
+        #div span{left: 0;top: 0;}
+        #div p{left: 0;bottom: 0;margin: 0;}
+        img{width: 300px;height: 300px;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oSpan=document.getElementById('page');
+            var oP=document.getElementById('title');
+            var oImg=document.getElementById('img');
+            var oLeft=document.getElementById('left');
+            var oRight=document.getElementById('right');
+            var oLoop=document.getElementById('loop');
+            var oOrder=document.getElementById('order');
+            var arrP=['冷酷大耳环美女','USA机器','晶莹翅膀美女','红色古风美女','大脸猫喵喵喵'];
+            var Isrc=['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'];
+
+            var i=0;
+
+            function change() {
+                oSpan.innerHTML=i+1+'/'+Isrc.length;
+                oP.innerHTML=arrP[i];
+                oImg.src=Isrc[i];
+            }
+
+           change();
+
+            oLoop.onclick=function () {
+                oRight.onclick=function () {
+                    i++;
+                    if (i==Isrc.length){
+                        i=0;
+                    }
+                    change();
+                };
+                oLeft.onclick=function () {
+                    i--;
+                    if (i==-1){
+                        i=Isrc.length-1;
+                    }
+                    change();
+                };
+            };
+
+        oOrder.onclick=function () {
+            oRight.onclick=function () {
+                i++;
+                if (i>Isrc.length-1){
+                    i=Isrc.length-1;
+                }
+                change();
+            };
+            oLeft.onclick=function () {
+                i--;
+                if (i<0){
+                   i=0;
+                }
+                change();
+            };
+        }
+
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="循环" id="loop">
+<input type="button" value="顺序" id="order">
+<div id="div">
+
+    <a href="javascript:;" id="left"><</a>
+    <a href="javascript:;" id="right">> </a>
+    <span id="page">正在计算当前图片位置</span>
+    <p id="title">图片正在加载中</p>
+    <img src="" id="img">
+</div>
+</body>
+</html>

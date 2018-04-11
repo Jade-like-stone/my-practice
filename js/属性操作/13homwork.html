@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性读写操作和innerHTML配合实例</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #div1{ width: 200px;height: 200px;line-height: 25px; border: 1px solid royalblue;padding: 10px;background: ghostwhite;overflow:auto}
+        .div11{width: 170px;height: 30px;
+            }
+        .p{height: 25px;line-height: 25px;border: 1px solid #fff;border-radius: 6px;overflow: hidden}
+        .p1{margin-left: 2px;background: #cccccc;}
+        .p2{margin-right:2px;background: greenyellow;}
+        .div12{float: right}
+        img{width: 25px;height:25px;line-height: 25px;}
+        .img1{float: left}
+        .img2{float: right}
+        #big{margin: 50px auto;width: 300px;height: 300px;border:none;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv1=document.getElementById('div1');
+            var oText1=document.getElementById('text1');
+            var oBtn1=document.getElementById('btn1');
+            var oImg=document.getElementById('img');
+            var arrSrc=['img/smile.jpg','img/sun.jpg'];
+            var i=0;
+            oImg.src=arrSrc[i];
+            function judge() {
+                i++;
+                if (i<arrSrc.length){
+                    oImg.src=arrSrc[i];
+
+                }
+                if (i>arrSrc.length-1){
+                    i=0;
+                    oImg.src=arrSrc[i];
+
+                }
+            }
+            oImg.onclick=judge;
+
+            oBtn1.onclick=function () {
+                if (i==0){
+                    oDiv1.innerHTML='<div class="div11">'+'<span class="p p1">'+oText1.value+'</span><img src="'+oImg.src+'" class="img1" ></div>'+oDiv1.innerHTML;
+                    oText1.value='';
+                }else {
+                    oDiv1.innerHTML='<div class="div12">'+'<span class="p p2">'+oText1.value+'</span><img src="'+oImg.src+'" class="img2" ></div>'+"<br>"+oDiv1.innerHTML;
+                    oText1.value='';
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="big">
+<div id="div1">
+    <div class="div11"></div>
+    <div class="div12"></div>
+</div>
+
+<img src="" id="img">
+<input type="text" id="text1">
+<input type="button" value="提交" id="btn1">
+</div>
+</body>
+</html>

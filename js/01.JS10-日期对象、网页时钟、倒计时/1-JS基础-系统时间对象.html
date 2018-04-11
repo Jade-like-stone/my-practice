@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var body=document.body;
+            /*
+             系统时间对象
+             new Date()   当前系统的时间对象
+             */
+            //typeof myTime =>object
+
+            setInterval(time,1000);
+            time();
+           function time() {
+               var myTime=new Date();
+
+               //number
+               var iYear=myTime.getFullYear();
+               var iMonth=myTime.getMonth()+1;//月份从0开始
+
+               var iWeek=myTime.getDay();//星期日：0
+               var iDay=myTime.getDate();
+               var iHour=myTime.getHours();
+               var iMinute=myTime.getMinutes();
+               var iSecond=myTime.getSeconds();
+
+
+               switch (iWeek){
+                   case 0:
+                       iWeek='星期日';
+                       break;
+                   case 1:
+                       iWeek='星期一';
+                       break;
+                   case 2:
+                       iWeek='星期二';
+                       break;
+                   case 3:
+                       iWeek='星期三';
+                       break;
+                   case 4:
+                       iWeek='星期四';
+                       break;
+                   case 5:
+                       iWeek='星期五';
+                       break;
+                   case 6:
+                       iWeek='星期六';
+                       break;
+               }
+
+               var str='';
+               str=iYear+'年'+addZero(iMonth)+'月'+addZero(iDay)+'日'+iWeek+addZero(iHour)+':'+addZero(iMinute)+':'+addZero(iSecond);
+               body.innerHTML=str;
+           }
+           function addZero(n) {
+               return n<10 ? '0'+n : ''+n;
+           }
+        }
+
+
+
+    </script>
+</head>
+<body style="font-size: 60px; text-align: center">
+
+</body>
+</html>

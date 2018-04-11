@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .list{margin:0;padding:0;
+            list-style:none;}
+        .list li{width: 150px;border-right: 1px solid black;float:left;}
+        .list li a{float: left;width: 40px;margin:0 5px;font-size: 12px;line-height: 30px;text-align: center;}
+        .list li a:nth-child(3n+1){font-weight: bold;}
+        .list li:last-of-type{border:none;}
+        .list li:nth-child(3) a:nth-child(2){color: red;}
+    </style>
+    <script>
+        /*
+         E:nth-child(n)  表示E父元素中的第n个字节点
+         p:nth-child(odd){background:red}  匹配奇数行
+         p:nth-child(even){background:red}  匹配偶数行
+
+         p:nth-child(2n){background:red}//找到p元素父级下第2n个子节点并且标签为p
+         //body *:p:nth-child(2)
+         E:nth-last-child(n) 表示E父元素中的第n个字节点，从后向前计算
+
+         E:nth-of-type(n)  表示E父元素中的第n个字节点，且类型为E(元素)
+         E:nth-last-of-type(n)表示E父元素中的第n个字节点，且类型为E,从后向前计算
+         E:empty 表示E元素中没有子节点。注意：子节点包含文本节点
+
+         E:first-child 表示E元素中的第一个子节点
+         E:last-child 表示E元素中的最后一个子节点
+         E:first-of-type 表示E父元素中的第一个子节点且节点类型是E的
+         E:last-of-type 表示E父元素中的最后一个子节点且节点类型是E的
+         E:only-child表示E元素中只有一个子节点。注意：子节点不包含文本节点
+         E:only-of-type 表示E的父元素中只有一个子节点，且这个唯一的子节点的类型必须是E。注意：子节点不包含文本节点
+
+         */
+    </script>
+</head>
+<body>
+<ul class="list">
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+    <li>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+        <a href="#">道德经</a>
+    </li>
+</ul>
+</body>
+</html>

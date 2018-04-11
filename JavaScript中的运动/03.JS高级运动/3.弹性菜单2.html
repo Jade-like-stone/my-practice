@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin:0; padding:0;}
+        #ul1{width: 450px;height: 30px;margin:50px auto;position: relative;}
+        #ul1 li {width: 100px;height: 30px;line-height: 30px;text-align: center;
+            color:black;background: red;list-style: none;float:left;border: 1px solid black;
+            margin-right: 10px;}
+        #ul1 #mark{position: absolute;top:0;left: 0;overflow:hidden;border-radius: 10px;border:none;}
+        #ul1 #mark ul{position: absolute;left:0px;top:0px;width: 450px; color:white;}
+        #ul1 #mark ul li{color: white;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oMark=document.getElementById('mark');
+            var aLi=document.getElementsByClassName('box');
+            var oUl=oMark.getElementsByTagName('ul')[0];
+            var timer=null;
+            var timer2=null;
+            var iSpeed=0;
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onmouseover=function () {
+//                        alert(this.offsetLeft);
+                    clearTimeout(timer2);
+                    doMove(this.offsetLeft);
+                };
+                aLi[i].onmouseout=function () {
+                    timer2=setTimeout(function () {
+                        doMove(0);
+                    },100);
+
+                }
+            }
+            oMark.onmouseover=function () {
+                clearTimeout(timer2);
+            }
+            oMark.onmouseout=function () {
+//                    timer2=setTimeout(function () {
+//                        doMove(0);
+//                    },100);
+                doMove(0);
+            }
+
+            function doMove(iTarget) {
+                clearInterval(timer);
+                timer=setInterval(function () {
+
+                    iSpeed+=(iTarget-oMark.offsetLeft)/6;
+                    iSpeed*=0.75;
+
+                    if(Math.abs(iSpeed)<=1&&Math.abs(iTarget-oMark.offsetLeft)<=1){
+                        clearInterval(timer);
+                        oMark.style.left=iTarget+'px';
+                        oUl.style.left=-iTarget+'px';
+                        iSpeed=0;
+                    }else {
+                        oMark.style.left=oMark.offsetLeft+iSpeed+'px';
+                        oUl.style.left=-oMark.offsetLeft+'px';
+                    }
+
+                },30);
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li id="mark">
+        <ul>
+            <li>首页</li>
+            <li>论坛</li>
+            <li>关于</li>
+            <li>体验</li>
+        </ul>
+    </li>
+    <li class="box">首页</li>
+    <li class="box">论坛</li>
+    <li class="box">关于</li>
+    <li class="box">体验</li>
+</ul>
+</body>
+</html>

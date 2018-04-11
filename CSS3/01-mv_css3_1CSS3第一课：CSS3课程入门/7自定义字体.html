@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         rgba
+         r		Red		红		0-255
+         g	Green		绿		0-255
+         b	Blue		蓝		0-255
+         a		Alpha		透明		0-1
+
+         实例: 背景透明，文字不透明
+         问题：注意边框颜色透明有问题
+
+
+         Hsl
+         H	Hue		色调		任意数值
+         S 	saturation    饱和度          0%-100%
+         L		Lightness	亮度		0%-100%
+
+
+
+         文字阴影
+         text-shadow：x y blur color, …
+         参数
+         x		横向偏移
+         y		纵向偏移
+         blur		模糊距离
+         color		阴影颜色
+         文本阴影如果加很多层，会很卡很卡很卡
+
+
+         文字阴影应用
+         最简单用法
+         text-shadow:2px 2px 4px black
+         阴影叠加
+         text-shadow:2px 2px 0px red, 2px 2px 4px green;
+         先渲染后面的，再渲染前面的
+         几个好玩的例子
+         层叠：color:red; font-size:100px; font-weight:bold; text-shadow:2px 2px 0px white, 4px 4px 0px red;
+         光晕：color:white; font-size:100px; text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de
+
+         火焰文字：text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e; font-family:Verdana, Geneva, sans-serif; font-size:100px; font-weight:bold; color:white;
+
+         webkit-text-stroke:宽度 颜色
+
+
+         Direction  定义文字排列方式(全兼容)
+         Rtl 从右向左排列
+         Ltr 从右向左排列
+         注意要配合unicode-bidi 一块使用
+
+         Text-overflow 定义省略文本的处理方式
+         clip  无省略号
+         Ellipsis 省略号 (注意配合overflow:hidden和white-space:nowrap一块使用)
+
+         自定义文字  格式：
+         @font-face {
+         font-family: ‘miaov';
+         src: url('111-webfont.eot');
+         src: url('111-webfont.eot?#iefix') format('embedded-opentype'),
+         url('111-webfont.woff') format('woff'),
+         url('111-webfont.ttf') format('truetype'),
+         url('111-webfont.svg#untitledregular') format('svg');
+         font-weight: normal;
+         font-style: normal;
+
+         }
+
+         转换字体格式生成兼容代码http://www.fontsquirrel.com/fontface/generator
+
+         */
+    </script>
+    <link rel="stylesheet" href="font/stylesheet.css">
+    <style>
+        body{
+            text-align: center;}
+        p{font-family: "旺体";font-size:100px;color: red;letter-spacing: 20px;transition: 1s;}
+        p:hover{color: aqua;}
+    </style>
+</head>
+<body>
+<p>AAA</p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        思路：
+//        1.找按钮的麻烦 点完之后隐藏
+//        2.先清空再生成
+//        3.判断
+        window.onload=function () {
+            var oUl=document.getElementById('list');
+            var oBtn=document.getElementById('btn');
+            var arr=['习近平会见法国总统马克龙  新时代新气象新作为',
+                '必须准备付出更为艰巨、艰苦的努力 领航新征程',
+            '王泽山、侯云德获2017年度国家最高科学技术奖',
+           '高性能碳纤维复合材料构件高质高效加工技术与装备',
+            '院士夫妻：妻子在台上领奖，丈夫在台下鼓掌'];
+            oBtn.value='自动添加'+arr.length+'个新闻';
+            var OnOff=true;
+            oBtn.onclick=function () {
+                if(OnOff){
+                    for(var i=0;i<arr.length;i++){
+                        oUl.innerHTML+='<li>'+arr[i]+'</li>';
+                    }
+                    OnOff=false;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn">
+<ul id="list"></ul>
+</body>
+</html>

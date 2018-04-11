@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{margin:0;position: absolute;right: 10px;top:10px;overflow: auto;
+            width: 700px;height: 500px;border:1px solid black; padding: 10px;}
+        ul li{line-height: 28px;list-style:none;border-bottom:1px dotted black;
+               word-break: break-all;overflow: hidden;}
+    </style>
+    <script src="js/move.js"></script>
+    <script>
+        window.onload=function () {
+            var oCon=document.getElementById('content');
+            var oBtn=document.getElementById('btn');
+            var oUl=document.getElementById('lis');
+
+            oBtn.onclick=function () {
+                var oLi=document.createElement('li');
+                oLi.innerHTML=oCon.value;
+                if(oUl.children[0]){
+                    oUl.insertBefore(oLi,oUl.children[0]);
+                }else {
+                    oUl.appendChild(oLi);
+                }
+                var iHeight=parseInt(css(oLi,'height'));
+                //offsetHeight:包括高度和边框  clientHeight:包括padding值
+                    oLi.style.height='0px';
+                    oLi.style.opacity=0;
+                    oLi.style.filter='alpha(opacity=0)';
+                doMove(oLi,{
+                    'height':iHeight,
+                    'opacity':100
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<textarea id="content" rows="10" cols="50"></textarea>
+<input type="button" id="btn" value="留言">
+<ul id="lis">
+</ul>
+</body>
+</html>

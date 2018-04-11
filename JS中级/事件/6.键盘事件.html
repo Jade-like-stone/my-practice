@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        onkeydown:当键盘按键按下的时候触发
+        onkeyup: 当键盘按键抬起的时候触发
+
+        event.KeyCode:数字类型 键盘按键的值 键值 ASC码
+        功能键  ctrlKey  shiftKey  altKey:  布尔值
+        当一个事件发生的时候，如果ctrl||shift||alt 是按下的状态
+                        返回true  否则返回false
+
+            不是所有元素都可以接收键盘事件
+            能够响应用户输入的元素
+            能够接收焦点的元素
+            a 37 w 38 d 39 s 40
+               如果按下不抬起 那么会连续触发
+                 */
+        window.onload=function () {
+//            document.onkeydown=function (ev) {
+//                var ev=ev||event;
+//                //alert(ev.keyCode);
+//            }
+//            document.onclick=function (ev) {
+//                var oev=ev||event;
+//                alert(oev.ctrlKey)
+//            }
+            var oInp=document.getElementsByTagName('input')[0];
+            var oUl=document.getElementsByTagName('ul')[0];
+            oInp.onkeyup=function (ev) {
+                var oev=ev||event;
+                if (this.value!=''){
+                    if (ev.keyCode==13&&ev.ctrlKey){
+                        var oLi=document.createElement('li');
+                        oLi.innerHTML=this.value;
+
+                        if (oUl.children[0]){
+                            oUl.insertBefore(oLi,oUl.children[0]);
+                        }else {
+                            oUl.appendChild(oLi);
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text">
+<ul></ul>
+</body>
+</html>

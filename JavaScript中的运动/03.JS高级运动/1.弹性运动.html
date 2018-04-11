@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        #div2{width: 2px;background: black;height: 500px;margin-left: 500px;}
+        #div1{width: 100px;height: 100px;background: red;position: absolute;
+            left: 0;}
+    </style>
+    <script>
+        /*
+         缓冲：局部iSpeed=(目标点-当前值)/系数；
+         iSpeed取整
+
+         弹性：全局iSpeed+=(目标点-当前值)/系数；//6,7,8
+         iSpeed*=摩擦系数//0.7  0.75
+
+         */
+        window.onload=function () {
+            var oBtn=document.getElementById('btn');
+            var oDiv=document.getElementById('div1');
+            var iSpeed=0;
+            var timer=null;
+            oBtn.onclick=function () {
+                clearInterval(timer);
+                timer=setInterval(function () {
+                    iSpeed+=(500-oDiv.offsetLeft)/8;
+                    iSpeed*=0.75;
+
+                    if(Math.abs(iSpeed)<=1&&Math.abs(500-oDiv.offsetLeft)<=1){
+                        clearInterval(timer);
+                        iSpeed=0;
+                        oDiv.style.left='500px';
+                    }
+                    else {
+                        oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+                    }
+                    document.title=iSpeed+','+oDiv.style.left;
+
+                },30);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+<input type="button" value="走起" id="btn">
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

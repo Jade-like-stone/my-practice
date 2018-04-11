@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:100px;height:100px;background: red;position:absolute;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+            document.onkeydown=function (ev) {
+                var oev=ev||event;
+
+                switch (oev.keyCode){
+                    case 37:
+                        oDiv.style.left=oDiv.offsetLeft-10+'px';
+                        break;
+                    case 38:
+                        oDiv.style.top=oDiv.offsetTop-10+'px';
+                        break;
+                    case 39:
+                        oDiv.style.left=oDiv.offsetLeft+10+'px';
+                        break;
+                    case 40:
+                        oDiv.style.top=oDiv.offsetTop+10+'px';
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

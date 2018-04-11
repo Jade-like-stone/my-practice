@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../BaiduYunDownload/01.JavaScript基础部分/01.JS9-定时器管理、函数封装/课件及作业/miaov.js"></script>
+</head>
+<script src="js/doMove.js"></script>
+<script>
+    window.onload=function () {
+        var aDiv=document.getElementsByTagName('div');
+            var len=20;
+            var str='';
+            var num=0;
+            var timer=null;
+
+        for(var i=0;i<len;i++){
+            str+='<div style="width: 50px;height: 50px;background: red;position: absolute;top:0; left: '+60*i+'px"></div>'
+        }
+        document.body.innerHTML=str;
+        document.onclick=function () {
+
+                clearInterval(timer);
+                timer=setInterval(function () {
+                    doMove(aDiv[num],'top',52,500);
+                    num++;
+                    if (num===len){
+                        clearInterval(timer);
+                    }
+                },100);
+
+    }}
+</script>
+<body>
+
+</body>
+</html>

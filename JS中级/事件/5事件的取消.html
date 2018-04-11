@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        第一种：赋值=null
+        例如：document.onclick=null;
+
+        第二种
+        IE:obj.detachEvent(事件名称，事件函数);
+        标准：obj.removeEventListener(事件名称，事件函数，是否捕获)
+         */
+        window.onload=function () {
+            function fn1() {
+                alert(1);
+            }
+            function fn2() {
+                alert(2);
+            }
+//            document.attachEvent('onclick',fn1);
+//            document.attachEvent('onclick',fn2);
+//
+//            document.detachEvent('onclick',fn1);
+//            document.detachEvent('onclick',fn2);
+            document.addEventListener('click',fn1,false);
+            document.addEventListener('click',fn1,true);
+            document.addEventListener('click',fn2,false);
+
+            document.removeEventListener('click',fn1,false);
+            document.removeEventListener('click',fn1,true);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

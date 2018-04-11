@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            alert(fn1(5));
+            alert(fn1(7));
+            function fn1(a) {
+                var arr=[];
+                for(var i=1;i<=a;i++){
+                    arr.push(i);
+                }
+                return arr;
+            }
+        }
+        /*
+        return：返回值
+        1.函数名+括号：fn1()==》return后面的值
+        2.所有函数默认的返回值 未定义
+        3.return后面的代码都不执行了
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

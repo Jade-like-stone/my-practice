@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{width: 100px;height: 100px;background: red;}
+        .div2{width: 100px;height: 100px;background: blue;}
+    </style>
+    <script>
+        window.onload=function () {
+            /*
+             元素.cloneNode()//克隆某个元素
+             注意：
+                在克隆的时候 默认(false)只克隆指定元素本身，不会克隆
+                该元素下的所有子节点(cloneNode(有参数，默认为false))
+                如果里面传入true，就可以克隆该元素下的所有子节点
+
+                事件是不会克隆的
+
+                注意：appendChild/insertBefore/replaceChild在操作一个已有元素时，
+                是将一个原有的元素移动，而不是复制一份进行操作
+              */
+            var oBtn=document.getElementsByTagName('input')[0];
+            var aDiv=document.getElementsByTagName('div');
+            var oHr=document.getElementsByTagName('hr')[0];
+            oBtn.onclick=function () {
+                var clone=aDiv[2].cloneNode();
+               aDiv[0].insertBefore(clone,oHr);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="点击我替换div">
+<div class="box">
+    <div class="div1"></div><hr>
+    <div class="div2"></div>
+
+</div>
+</body>
+</html>

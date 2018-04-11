@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding: 0;margin:0;}
+        div{width: 520px;height: 280px;border:1px solid black;margin:100px auto;position: relative;overflow: hidden;}
+        div ul{position: absolute;top:0;left:0;}
+        div ul li{list-style: none;float:left;}
+        div ul li img{display: block;}
+        div p{text-align: center;position: absolute;width: 100%;bottom:10px;}
+        div p span{background: darkgray;padding: 0 10px;border-radius: 50%;margin-left: 4px;}
+        .active{background: greenyellow}
+
+    </style>
+    <script src="js/move.js"></script>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+            var oUl=document.getElementsByTagName('ul')[0];
+            var aLi=oUl.getElementsByTagName('li');
+            var aSpan=oDiv.getElementsByTagName('span');
+            var iLen=aLi.length;
+            var iWid=aLi[0].offsetWidth;
+            oUl.style.width=iLen*iWid+'px';
+
+
+
+function tab() {
+    for(var i=0;i<iLen;i++){
+        aSpan[i].index=i;
+        aSpan[i].onclick=function () {
+            for(var i=0;i<iLen;i++){
+                aSpan[i].className='';
+                //this.className='active';
+            }
+            this.className='active';
+
+            //oUl.style.left=-this.index*iWid+'px';
+            doMove(oUl,
+                {
+                    'left':-this.index*iWid
+                });
+        }
+    }
+}
+
+    tab();
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+        <li><img src="img/4.jpg"></li>
+        <li><img src="img/5.jpg"></li>
+    </ul>
+    <p>
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+</div>
+</body>
+</html>

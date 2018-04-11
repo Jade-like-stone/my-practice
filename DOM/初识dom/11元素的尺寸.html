@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding: 0;}
+        div{width: 100px;height: 100px;background: red;border:5px solid yellow;position: absolute;}
+    </style>
+    <script>
+        /*
+        elem.clientWidth/elem.clientHeight(获取某个元素的宽高)
+        注意：不计算边框  加上padding值
+
+        elem.offsetWidth/elem.offsetWidth (获取某个元素的宽高)
+        注意：会计算边框 加上padding值
+
+
+        可视区的宽高
+        document.documentElement.clientWidth;
+        document.documentElement.clientHeight
+
+        让一个不确定宽高的元素居中显示：
+        元素的left=(可视区域宽-元素的宽)/2
+        元素的top=(可视区域的高-元素的高)/2
+         */
+
+        window.onload=function () {
+          var oDiv=document.getElementsByTagName('div')[0];
+         var doW=document.documentElement.clientWidth;
+          var doH=document.documentElement.clientHeight;
+          var oDivW=oDiv.offsetWidth;
+          var oDivH=oDiv.offsetHeight;
+
+
+          oDiv.style.left=(doW-oDivW)/2+'px';
+          oDiv.style.top=(doH-oDivH)/2+'px';
+
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

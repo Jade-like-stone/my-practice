@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        NaN:  not a number
+//        isNan: is not a number
+//
+//        isNaN()//判断某些值是不是一个数字
+//        数字：false
+//        NaN:true
+//        alert(isNaN('100'));//false
+//        Number();  '100'=>100=>flase
+        window.onload=function () {
+            var aInp=document.getElementsByTagName('input');
+            aInp[1].onclick=function () {
+                var val=aInp[0].value;
+                if (isNaN(val)){
+                    alert('请输入数字'+val);
+                }else {
+                    alert('您输入的是'+val);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text">
+<input type="button" value="判断输入框里是不是一个数字">
+</body>
+</html>

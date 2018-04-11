@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        div{width: 100px;height: 100px;background: red;}
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div1');
+
+            oDiv.onclick=function () {
+                doMove(this,{
+                    'width':200,
+                    'height':300
+                },10)
+            }
+            function css(obj,attr) {
+                if(obj.currentStyle){
+                    return obj.currentStyle[attr];
+                }else {
+                    return getComputedStyle(obj,false)[attr];
+                }
+            }
+            function doMove(obj,json,speed) {
+                clearInterval(obj.timer);
+                var iCur=0;
+                var iBtn=true;
+                obj.timer=setInterval(function () {
+                    //定时器每走一下就要把要运动的属性都推进一次
+                    for(var attr in json){
+                        var dis=json[attr];
+                        if (attr=='opacity'){
+                            iCur=Math.round(css(obj,'opacity')*100);//标准0.3 非标准0.3
+                        }else {
+                            iCur=parseInt(css(obj,attr));
+                        }
+
+//                    alert(iCur);
+                        if (iCur!=dis){
+                            iBtn=false;
+                            if (attr=='opacity'){
+                                obj.style.opacity=(iCur+speed)/100;
+                                obj.style.filter='alpha(opacity='+(iCur+speed)+')'; }
+                            else {
+                                obj.style[attr]=iCur+speed+'px';
+                            }
+                        }
+                    }
+                    //在这里看下
+                    if(iBtn){
+                        clearInterval(obj.timer)
+                    }
+                },30);
+            }
+
+
+
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+<div id="div1">
+
+</div>
+
+</body>
+</html>

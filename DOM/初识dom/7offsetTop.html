@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{top:50px;border:10px solid black;}
+        .div1{width: 300px;
+            height:300px;background: red;position: relative;left: 50px;}
+        .div2{width: 200px;height: 200px;background: blue;position: absolute;left: 30px;}
+        .div3{width: 100px;height: 100px;background: yellow;
+            position: absolute;left: 0;transition:2s left;border:6px solid black; }
+    </style>
+    <script>
+        /*
+         offsetLeft：
+         外边框到有定位父级的内边框的距离
+
+         offsetParent：
+         外边框到有定位父级的内边框的距离
+
+
+        需求：
+         */
+            window.onload=function () {
+                var oBtn=document.getElementsByTagName('input')[0];
+              var oDiv3=document.getElementsByTagName('div')[2];
+
+              oBtn.onclick=function () {
+                  var left=0;
+                  var elem=oDiv3;
+                  var div3Border=parseInt(getComputedStyle(oDiv3).borderLeftWidth);
+                  while (elem){
+                    left+=elem.offsetLeft+parseInt(getComputedStyle(elem).borderLeftWidth);
+
+                    elem=elem.offsetParent;
+
+              }
+              left-=div3Border;
+
+                  oDiv3.style.left=-left+'px';
+
+
+              }
+
+
+
+
+            }
+    </script>
+</head>
+<body>
+<input type="button" value="点击我">
+<div class="div1">
+    <div class="div2">
+        <div class="div3"></div>
+    </div>
+</div>
+</body>
+</html>

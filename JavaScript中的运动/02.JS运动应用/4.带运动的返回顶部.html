@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{height: 2000px;}
+        div{width: 50px;height: 50px;border: 1px solid yellow;background: red;border-radius: 50%;
+            position: absolute;right: 0;top:0;}
+
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div1');
+            var timer=null;
+            var b=0;
+            function setTop() {
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                oDiv.style.top=scrollTop+document.documentElement.clientHeight-oDiv.offsetHeight+'px';
+
+            }
+            setTop();
+
+            window.onscroll=function () {
+                if (b!=1){
+                    //如果b=1当前scroll事件是被定时器触发
+                    //如果不等于一那么就是非定时器的其他任何一个操作触发该事件
+//                   alert(b);
+                    clearInterval(timer);
+                }
+               b=2;
+                setTop();
+            };
+            oDiv.onclick=function () {
+                clearInterval(timer);
+                var iCur=iSpeed=0;
+                timer=setInterval(function () {
+                iCur=document.documentElement.scrollTop||document.body.scrollTop;
+                iSpeed=Math.floor((0-iCur)/8);
+                if(iCur==0){
+                    clearInterval(timer);
+                }else {
+                    document.documentElement.scrollTop=document.body.scrollTop=iCur+iSpeed;
+                }
+                b=1;
+                },30);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

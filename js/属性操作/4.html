@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            width: 300px;background: red;color:yellow;border:10px solid #ccc;
+            padding:10px;
+        }
+        .yellow{
+            width: 300px;background: yellow;color:red;border:10px solid #ccc;
+            padding:10px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var oBtn1=document.getElementById('btn1');
+            var oBtn2=document.getElementById('btn2');
+            var oBtn3=document.getElementById('btn3');
+            var oBtn4=document.getElementById('btn4');
+            var oP1=document.getElementById('p1');
+
+            var num=16;
+            var str='';
+            oBtn2.onclick=function () {
+                num++;
+                oP1.style.fontSize=num+'px';//js中不允许出现-
+            };
+            oBtn1.onclick=function () {
+                num--;
+                oP1.style.fontSize=num+'px';//js中不允许出现-
+            };
+
+
+
+            oBtn3.onclick=function () {
+                //class 保留字   关键字：js用到的单词
+                //class=classNme
+                oP1.className='red';
+            };
+            oBtn4.onclick=function () {
+                //class 保留字   关键字：js用到的单词
+                //class=classNme
+                oP1.className='yellow';
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="-" id="btn1">
+<input type="button" value="+" id="btn2">
+<input type="button" value="红" id="btn3">
+<input type="button" value="蓝" id="btn4">
+<p id="p1">
+    我已经老了，有一天在一处公共场所的大厅里，
+    有一个男人向我走来，他主动介绍自己，
+    他对我说：“我认识你，我永远记得你，
+    那时候你还很年轻，人人都说你美，
+    现在我是特来告诉你，对我来说，
+    我觉得现在你比年轻的时候更美，
+    那时你是年轻女人，与你那时的面貌相比，
+    我更爱你现在备受催残的面容”
+</p>
+</body>
+</html>

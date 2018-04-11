@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width: 100px;height: 100px;background: red;position:absolute}
+    </style>
+    <script>
+        /*
+        1.onmousedown 选择元素
+        2.onmousemove  移动元素
+        3.onmouseup    释放元素
+         */
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+
+            oDiv.onmousedown=function (ev) {
+                var oev=ev||event;
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                var scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;
+
+                var disX=oev.clientX-oDiv.offsetLeft;
+                var disY=oev.clientY-oDiv.offsetTop;
+
+                document.onmousemove=function (ev) {
+                    var oev=ev||event;
+                    oDiv.style.left=oev.clientX-disX+'px';
+                    oDiv.style.top=oev.clientY-disY+'px';
+                };
+                document.onmouseup=function () {
+                    document.onmousemove=document.onmouseup=null;
+                };
+                    return false;
+            }
+        }
+    </script>
+</head>
+<body style="height: 1000px;">
+13232
+<div></div>
+</body>
+</html>

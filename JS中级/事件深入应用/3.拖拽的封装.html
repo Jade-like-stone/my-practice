@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width: 100px;height: 100px;background: red;position:absolute}
+        img{position: absolute}
+    </style>
+    <script>
+        /*
+         在移动的过程中限制拖拽对象的left值和top值
+         */
+        window.onload=function () {
+            var oDiv=document.getElementsByTagName('div')[0];
+            var oImg=document.getElementsByTagName('img')[0];
+            draft(oImg);
+           draft(oDiv);
+
+function draft(obj) {
+    obj.onmousedown=function (ev) {
+        var oev=ev||event;
+
+        var disX=oev.clientX-obj.offsetLeft;
+        var disY=oev.clientY-obj.offsetTop;
+//                    if(oDiv.setCapture)
+//                    {oDiv.setCapture()}
+        document.onmousemove=function (ev) {
+            var oev=ev||event;
+            obj.style.left=oev.clientX-disX+'px';
+            obj.style.top=oev.clientY-disY+'px';
+        };
+        document.onmouseup=function () {
+            document.onmousemove=document.onmouseup=null;
+//                    if (oDiv.releaseCapture){
+//                        oDiv.releaseCapture();
+        };
+        return false;
+    };
+}
+
+
+        }
+
+    </script>
+</head>
+<body style="height: 1000px;">
+<img src="img/cemara.png">
+<div></div>
+</body>
+</html>

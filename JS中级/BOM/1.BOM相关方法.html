@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //BOM: browser object model 浏览器对象模型
+        window.onload=function () {
+            /*
+             open(页面地址url,打开的方式)方法 打开一个新的窗口(页面)
+             如果url为空 默认为打开空白页面  如果打开方式为空，默认为新窗口方式模式打开
+             返回值：返回新打开的窗口的window对象
+
+             close()方法 关闭窗口  不经常用 兼容有问题
+             1.火狐：默认无法关闭
+             2.谷歌：默认直接关闭
+             3.IE：询问用户
+                可以关闭在本窗口中通过js方法打开的新窗口
+
+
+            window.navigator.userAgent->浏览器信息
+
+            window.location:浏览器地址信息
+             window.location.href   :url
+             window.location.search :url?后面的内容
+             window.location.hash   :url#后面的内容
+
+             */
+
+//            function open() {
+////                window.open('http://www.baidu.com','_self');
+//                window.open();
+//            }
+//          setTimeout(open,1000);
+//            document.onclick=function () {
+////                var opener=open();
+////                opener.document.body.innerHTML='Hello';
+//
+//                alert(window.navigator.userAgent)
+//            }
+//            if(window.navigator.userAgent.indexOf('WebKit')!=-1){
+//                alert('我是谷歌');
+//
+//            }
+//            else {
+//                alert('我不是谷歌');
+//            }
+            alert(window.location)
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

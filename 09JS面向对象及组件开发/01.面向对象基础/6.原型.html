@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //原型：改写对象下面公用的方法或者属性，让公用的方法或者
+        //        属性在内存中只存在一个，提高性能
+        //原型：CSS的class
+        //普通方法：css中的style 比原型的优先级高
+
+//普通方法：
+//        var arr=[1,2,3,4,5];
+//        var arr2=[2,2,2,2,2,2];
+//
+//        arr.sum=function () {
+//            var result=0;
+//            for(var i=0;i<this.length;i++){
+//                result+=this[i];
+//            }
+//            return result;
+//        };
+//
+//        arr2.sum=function () {
+//            var result=0;
+//            for(var i=0;i<this.length;i++){
+//                result+=this[i];
+//            }
+//            return result;
+//        };
+//
+//        alert(arr.sum());
+//        alert(arr2.sum());
+
+        //原型：prototype:写在构造函数下面
+        var arr=[1,2,3,4,5];
+        var arr2=[2,2,2,2,2,2];
+        Array.prototype.sum=function () {
+            var result=0;
+            for(var i=0;i<this.length;i++){
+                result+=this[i];
+            }
+            return result;
+        };
+                alert(arr.sum());
+                alert(arr2.sum());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
