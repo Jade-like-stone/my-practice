@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #div1 div{width:200px;height:200px;border:1px solid black;display: none;}
+        #div1 div,#div2 div{width:200px;height:200px;border:1px solid black;display: none;}
         .active{background: red;}
     </style>
     <script>
@@ -43,12 +43,14 @@
 //        4.改this指向：事件或者定时器 尽量让面向对象中的this指向对象
 
         window.onload=function () {
-            var t1=new Tab();
+            var t1=new Tab('div1');
             t1.init();
+            var t2=new Tab('div2');
+            t2.init();
         };
 
-        function Tab() {
-            this.oParent=document.getElementById('div1');
+        function Tab(id) {
+            this.oParent=document.getElementById(id);
             this.aInp=this.oParent.getElementsByTagName('input');
             this.aDiv=this.oParent.getElementsByTagName('div');
         }
@@ -79,6 +81,14 @@
         <div style="display: block;">11111</div>
         <div>22222</div>
         <div>33333</div>
-        </div>
+    </div>
+    <div id="div2">
+        <input class="active" type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <div style="display: block;">11111</div>
+        <div>22222</div>
+        <div>33333</div>
+    </div>
         </body>
         </html>
