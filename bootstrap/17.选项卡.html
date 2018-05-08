@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"><!--提高ie渲染效果-->
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--和移动端视口相同的尺寸-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+       // 选项卡：
+       //  头部：
+       //      -nav
+       //      -nav-tabs
+       //      -nav-justified  头部对齐<768 变为竖状的
+       //      -nav-tabs-justified 线和按钮的长度相同
+       //      -nav-stacked  竖状的导航栏
+
+       //      带下拉菜单的头部
+    </script>
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">one</a></li>
+        <li><a href="#">two</a></li>
+        <li><a href="#">three</a></li>
+    </ul>
+
+    <ul class="nav nav-tabs nav-tabs-justified" style="width:400px;">
+        <li class="active"><a href="#">one</a></li>
+        <li><a href="#">two</a></li>
+        <li><a href="#">three</a></li>
+    </ul>
+
+    <ul class="nav nav-tabs nav-justified" style="width:400px;">
+        <li class="active"><a href="#">one</a></li>
+        <li><a href="#">two</a></li>
+        <li><a href="#">three</a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills nav-justified" style="width:400px;">
+        <li class="active"><a href="#">one</a></li>
+        <li><a href="#">two</a></li>
+        <li><a href="#">three</a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills nav-stacked" style="width:400px;">
+        <li class="active"><a href="#">one</a></li>
+        <li><a href="#">two</a></li>
+        <li><a href="#">three</a></li>
+    </ul>
+    <ul class="nav nav-tabs nav-justified" style="width:400px;">
+        <li class="active"><a href="#">one</a></li>
+        <li><a href="#">two</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">three<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">child1</a></li>
+                <li><a href="#">child2</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+</html>

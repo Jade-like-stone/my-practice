@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"><!--提高ie渲染效果-->
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--和移动端视口相同的尺寸-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+        // 下拉菜单
+        //     属性： data-* js触发器
+        //            aria-* 针对特殊人群 屏幕阅读器 是否会弹出对应东西 隐藏显示
+        //            role
+        //     open
+        //     dropdown-menu-right
+        //     dropdown-header
+        //     divider
+        // 例子：运动且带图标的菜单
+    </script>
+</head>
+<body>
+<!-- Single button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+        Action <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
+<div class="container">
+    <div class="row" style="height: 200px;">
+        <div class="col-lg-4">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="btn-group open pull-right">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="btn-group btn-block">
+                <button type="button" class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" >
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 200px;">
+        <div class="col-lg-4">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header"><a href="#">第一部分</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <!--<li role="separator" class="divider"></li>-->
+                    <li class="divider"><a href="#">第一部分</a></li>
+                    <li class="dropdown-header"><a href="#">第二部分</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="btn-group open pull-right">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="active"><a href="#">Action</a></li>
+                    <li class="disabled"><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="btn-group btn-block open">
+                <button type="button" class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" >
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right btn-block ">
+                    <li class="text-center"><a href="#">Action</a></li>
+                    <li class="text-center"><a href="#">Another action</a></li>
+                    <li class="text-center"><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="text-center"><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+</html>

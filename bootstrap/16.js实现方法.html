@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"><!--提高ie渲染效果-->
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--和移动端视口相同的尺寸-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+        //        容器：class:
+        //            container-fluid:流体
+        //            container:固定 1170 970 750 auto
+    </script>
+    <style>
+        .dropdown-menu a span{padding-right: 3px;}
+        .dropdown-menu{animation: 0.3s linear fadeIn}
+        @keyframes fadeIn {
+            0%{opacity: 0;transform: translateY(-20px)}
+            100%{opacity: 1;transform: translateY(0)}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="row">
+    <div class="col-lg-4">
+        <div class="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle" >
+                Plugins <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#"><span class="glyphicon glyphicon-fire"> </span>  Most Popular</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#"><span class="glyphicon glyphicon-leaf"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-certificate"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-heart-empty"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-send"> </span> WorldPress</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle">
+                Plugins <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#"><span class="glyphicon glyphicon-fire"> </span>  Most Popular</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#"><span class="glyphicon glyphicon-leaf"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-certificate"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-heart-empty"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-send"> </span> WorldPress</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target=".dropdown">
+                Plugins <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#"><span class="glyphicon glyphicon-fire"> </span>  Most Popular</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#"><span class="glyphicon glyphicon-leaf"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-certificate"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-heart-empty"> </span> WorldPress</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-send"> </span> WorldPress</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    // 配置
+    // 方法
+    // 自定义事件
+  $('.dropdown-toggle').dropdown();
+   // $('.dropdown-toggle').dropdown('toggle');//如果显示则隐藏 如果隐藏则显示
+// $('.dropdown').on('show.bs.dropdown',function () {
+//     alert(1);
+// });
+//     $('.dropdown').on('shown.bs.dropdown',function () {
+//         alert(2);
+//     });
+//     $('.dropdown').on('hide.bs.dropdown',function () {
+//         alert(3);
+//     });
+//     $('.dropdown').on('hidden.bs.dropdown',function () {
+//         alert(4);
+//     });
+</script>
+</html>
